@@ -47,12 +47,12 @@ app.get('/usersData/:id',(req,res)=>{
 
  app.post('/usersData/insertUser',(req,res)=>{ 
      const params = req.body
-    mySqlCreateConnection.query('INSERT INTO UserData set ?', params ,(err,result)=>{
+      mySqlCreateConnection.query('INSERT INTO UserData set ?', params ,(err,result)=>{
          
         if(!err){
              res.send(`id : ${params.id} has`);
          }else{
-             console.log(err);
+             console.log(err);  
          }
     })
  });
